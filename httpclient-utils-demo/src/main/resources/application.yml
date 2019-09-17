@@ -1,0 +1,5 @@
+logging:
+  level:
+    com.onnoa.httpclient.utils.demo: info
+  file: ./httpclient-utils-demo/logs/httpclient.log
+
