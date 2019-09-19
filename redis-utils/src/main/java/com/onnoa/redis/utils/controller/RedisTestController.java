@@ -30,6 +30,6 @@ public class RedisTestController {
     @RequestMapping(value = "save",method = RequestMethod.POST)
     @ResponseBody
     public void save1(@RequestParam(value="name",required=false,defaultValue="默认") String name){
-       TbUserCache.PAY_REQUEST_NO.set(name,"名字");
+       //TbUserCache.PAY_REQUEST_NO.set(name,"名字");
     }
 }

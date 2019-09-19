@@ -11,12 +11,12 @@ public class Practice2 {
 
     public static void main(String[] args) {
         // 1.要获取一个方法就是获取类的信息，获取类的信息首先要获取类的类类型，要获取print(int ,int )方法
-        ReflectAdd a1 = new ReflectAdd();
+        ReflectTest a1 = new ReflectTest();
         Class c = a1.getClass();
 
         System.out.println("c:" + c);
 
-        System.out.println("ReflectAdd.class:" + ReflectAdd.class);
+        System.out.println("ReflectAdd.class:" + ReflectTest.class);
         // 2.获取方法 名称和参数列表来决定 getMethod获取的是public的方法 getDelcaredMethod自己声明的方法
         try {
             System.out.println("==================调用print(int a, int b)方法");
@@ -36,7 +36,7 @@ public class Practice2 {
             // 获取方法print(String,String)
             Method m1 = c.getMethod("print", String.class, String.class);
             System.out.println("m1:" + m1);
-            Method print = ReflectAdd.class.getMethod("print", String.class, String.class);
+            Method print = ReflectTest.class.getMethod("print", String.class, String.class);
             System.out.println("print:" + print);
             // 用方法进行反射操作
             // a1.print("hello", "WORLD");
