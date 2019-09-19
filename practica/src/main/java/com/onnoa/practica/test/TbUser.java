@@ -1,8 +1,10 @@
 package com.onnoa.practica.test;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
+import com.onnoa.practica.annotation.FieldNotNull;
+import lombok.Data;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -11,6 +13,8 @@ import java.util.Date;
  * @Author: onnoA
  * @Date: 2019/9/10 10:31
  */
+@Data
+//@Accessors(chain = true)
 public class TbUser  implements Serializable {
 
     private int id;
@@ -19,15 +23,24 @@ public class TbUser  implements Serializable {
 
     private String password;
 
+    @FieldNotNull(message = "手机号码不能为空")
+    @NotNull(message = "电话号码不能为空")
+    @Pattern(regexp = "\"(134[0-8]\\\\d{7})\" + \"|(\" + \"((13([0-3]|[5-9]))\" + \"|149\"\n" +
+            "            + \"|15([0-3]|[5-9])\" + \"|166\" + \"|17(3|[5-8])\" + \"|18[0-9]\" + \"|19[8-9]\" + \")\" + \"\\\\d{8}\" + \")\"",
+            message = "请输入正确的手机号")
     private String phone;
 
+    @FieldNotNull(message = "邮箱不能为空")
+    @NotNull(message = "邮箱不能为空")
+    @Pattern(regexp = "^([a-z0-9A-Z]+[-|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$",
+    message = "请输入正确的邮箱")
     private String email;
 
     private Date created;
 
     private Date updated;
 
-    public int getId() {
+   /* public int getId() {
         return id;
     }
 
@@ -81,5 +94,5 @@ public class TbUser  implements Serializable {
 
     public void setUpdated(Date updated) {
         this.updated = updated;
-    }
+    }*/
 }

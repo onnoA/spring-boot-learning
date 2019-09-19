@@ -1,8 +1,11 @@
 package com.onnoa.practica.test;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
 /**
@@ -12,6 +15,11 @@ import java.util.Set;
  */
 public class Practice1 {
     public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        list.add("测试");
+        String first = list.stream().filter(str -> "测试".equals(str)).findFirst().orElse(null);
+        System.out.println(first);
+
         Map<String, String> map = new HashMap<String, String>();
         for (int i = 0; i < 10; i++) {
             map.put("" + i, "YL");
