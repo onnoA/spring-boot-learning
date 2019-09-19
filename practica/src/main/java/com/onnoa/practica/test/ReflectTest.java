@@ -34,11 +34,8 @@ public class ReflectTest {
             //
             if ("username".equals(fieldName)) {
                 // 获取字段类型
-                Type genericType = declaredField.getGenericType();
-                System.out.println("字段类型为：" + genericType);
-                //System.out.println("class java.lang.String".equals(genericType.toString()));
-                if ("class java.lang.String".equals(genericType.toString())) {
-                    System.out.println("类型为：" + genericType);
+                if ("class java.lang.String".equals(declaredField.getGenericType().toString())) {
+                    System.out.println("字段类型为：" + declaredField.getGenericType());
                     try {
                         Method m = tbUser.getClass().getMethod("getUsername");
                         System.out.println("获取的get方法名为：" + m);
