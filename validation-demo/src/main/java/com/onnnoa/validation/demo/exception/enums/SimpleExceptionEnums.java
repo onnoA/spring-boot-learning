@@ -8,7 +8,7 @@ package com.onnnoa.validation.demo.exception.enums;
  */
 public enum  SimpleExceptionEnums {
 
-    INPUT_PARAMS_ERROR(10010,"参数校验失败,请重新输入");
+    INPUT_PARAMS_ERROR(10010,"参数校验失败,请重新输入:");
 
     private Integer code;
     private String errorMsg;

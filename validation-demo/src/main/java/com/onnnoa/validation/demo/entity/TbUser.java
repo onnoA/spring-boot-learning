@@ -1,6 +1,9 @@
 package com.onnnoa.validation.demo.entity;
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -13,6 +16,8 @@ import java.util.Date;
  */
 
 @Data
+@Accessors(chain = true)
+@NoArgsConstructor
 public class TbUser {
 
     private int id;

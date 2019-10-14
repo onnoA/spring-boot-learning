@@ -33,6 +33,7 @@
         <module>collection-demo</module>
         <module>httpclient-utils-demo</module>
         <module>redis-utils</module>
+        <module>validation-demo</module>
     </modules>
 
     <dependencies>

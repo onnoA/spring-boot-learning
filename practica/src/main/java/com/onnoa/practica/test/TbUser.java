@@ -1,6 +1,7 @@
 package com.onnoa.practica.test;
 
 import com.onnoa.practica.annotation.FieldNotNull;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import javax.validation.constraints.NotNull;
@@ -19,6 +20,7 @@ public class TbUser  implements Serializable {
 
     private int id;
 
+    //@ApiModelProperty(value = "用户名",name = "username",required = true )
     private String username;
 
     private String password;

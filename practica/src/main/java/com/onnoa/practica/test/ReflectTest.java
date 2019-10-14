@@ -23,8 +23,17 @@ public class ReflectTest {
         tbUser.setEmail("onnoahen@165.c");
         // 获取TbUser对象所有的字段数组
         Field[] declaredFields = tbUser.getClass().getDeclaredFields();
-        System.out.println("获取的TbUser所有字段:" + declaredFields);
+        for (Field declaredField : declaredFields) {
+            System.out.println("获取的TbUser所有字段:" +declaredField.getName());
+        }
         for (Field field : declaredFields) {
+            field.setAccessible(true);
+            try {
+                Object v = field.get(tbUser);
+                System.out.println(v);
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
             if (field.isAnnotationPresent(FieldNotNull.class)) {
                 // 打破访问权限，使得在类的外面获取此类的私有成员变量
                 field.setAccessible(true);

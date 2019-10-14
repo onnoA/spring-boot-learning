@@ -8,7 +8,7 @@ import javax.validation.Validation;
 import java.util.Set;
 
 /**
- * @Description: Validation 校验工具类
+ * @Description: 前端参数校验工具类
  * @Author: onnoA
  * @Date: 2019/9/20 23:44
  */
@@ -28,7 +28,6 @@ public class ValidationUtil {
      */
     public static <T> void validate(T obj) {
         if (obj == null) {
-            //System.out.println("参数实体不能为空");
             throw new SimpleException(SimpleExceptionEnums.INPUT_PARAMS_ERROR.getCode(), "参数实体不能为空");
         }
         Set<ConstraintViolation<T>> constraintViolations = validator.validate(obj);

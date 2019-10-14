@@ -12,11 +12,12 @@ public class ErrorUtil {
 
     /**
      * 功能描述: 自定义业务异常封装返回提
+     *
      * @auther: onnoA
      * @date: 2019/9/23 0:10
      */
-    public static <T> ResultBean<T> getErrorBean(SimpleExceptionEnums simpleExceptionEnums,String errorParams){
+    public static <T> ResultBean<T> getErrorBean(SimpleExceptionEnums simpleExceptionEnums, String errorParams) {
         ResultBean<T> resultBean = new ResultBean<>();
-        return resultBean.setCode(simpleExceptionEnums.getCode()).setMsg(SimpleExceptionEnums.getDescWithParam(simpleExceptionEnums,errorParams));
+        return resultBean.setCode(simpleExceptionEnums.getCode()).setMsg(errorParams/*SimpleExceptionEnums.getDescWithParam(simpleExceptionEnums,errorParams)*/);
     }
 }
